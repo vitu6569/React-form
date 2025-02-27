@@ -9,7 +9,7 @@ export default function HomeScreen() {
   return (
     // Cria uma View com estilo flex, centralizando os itens
     <View style={{flex: 1}}>
-      <Header showTextButton={true} showBackButton={false} onBackPress={() => null}/>
+      <Header showTextButton={true}/>
     </View>
   );
 }
