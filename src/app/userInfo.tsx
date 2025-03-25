@@ -45,6 +45,7 @@ export default function UserInfo() {
 
   const FirstNameRef = useRef<TextInput>(null);
   const LastNameRef = useRef<TextInput>(null);
+  const OccupationRef = useRef<TextInput>(null);
 
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
@@ -73,6 +74,8 @@ export default function UserInfo() {
               control,
               rules: { required: "First Name is required" },
             }}
+            sizeC="default"
+            inputI="large"
             error={errors.firstName?.message}
           />
           <Input
@@ -87,6 +90,8 @@ export default function UserInfo() {
               control,
               rules: { required: "Last Name is required" },
             }}
+            sizeC="default"
+            inputI="large"
             error={errors.lastName?.message}
           />
           <View
@@ -117,7 +122,8 @@ export default function UserInfo() {
                     },
                   },
                 }}
-                size="default"
+                sizeC="default"
+                inputI="large"
                 error={errors.dateOfBirth?.message}
               />
             </View>
@@ -133,6 +139,31 @@ export default function UserInfo() {
               />
             </View>
           </View>
+          <SelectInput
+            formProps={{
+              control,
+              name: "language",
+              rules: { required: "Language is required" },
+            }}
+            options={["English", "Spanish", "Portuguese"]}
+            placeholder="Language"
+          />
+          <Input
+            ref={OccupationRef}
+            inputProps={{
+              placeholder: "Occupation",
+              textContentType: "familyName",
+              returnKeyType: "next",
+            }}
+            formProps={{
+              name: "occupation",
+              control,
+              rules: { required: "Occupation is required" },
+            }}
+            sizeC="default"
+            inputI="large"
+            error={errors.occupation?.message}
+          />
 
           <Button onPress={handleSubmit(handleNextStep)} title="CONFIRM" />
         </View>

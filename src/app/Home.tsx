@@ -32,7 +32,9 @@ export default function HomeScreen() {
   }
 
   return (
-    <View style={{ flex: 1, gap: 8, backgroundColor: styleVariables.Colors.black }}>
+    <View
+      style={{ flex: 1, gap: 8, backgroundColor: styleVariables.Colors.black }}
+    >
       <View
         style={{
           flex: 1,
@@ -42,7 +44,9 @@ export default function HomeScreen() {
         }}
       >
         <View style={{ marginHorizontal: 3, marginTop: 53, gap: 24 }}>
-          <Text style={[styles.LabelsFont, { color: styleVariables.Colors.white }]}>
+          <Text
+            style={[styles.LabelsFont, { color: styleVariables.Colors.white }]}
+          >
             WELCOME BACK
           </Text>
           <Text style={[styles.H2, { color: styleVariables.Colors.white }]}>
@@ -67,6 +71,8 @@ export default function HomeScreen() {
                 },
               },
             }}
+            sizeC="default"
+            inputI="large"
             error={errors.email?.message}
           />
 
@@ -93,10 +99,18 @@ export default function HomeScreen() {
                 },
               },
             }}
+            sizeC="default"
+            inputI="large"
             error={errors.password?.message}
           />
 
-          <Button title="Login" size="big" variant="primary" onPress={handleButtonPress} style={{marginTop: 28}} />
+          <Button
+            title="Login"
+            size="big"
+            variant="primary"
+            onPress={handleButtonPress}
+            style={{ marginTop: 28 }}
+          />
         </View>
 
         <View
@@ -106,11 +120,23 @@ export default function HomeScreen() {
             marginTop: 24,
           }}
         >
-          <Text style={[{ color: styleVariables.Colors.lightGrey }, styles.LabelsFont]}>
+          <Text
+            style={[
+              { color: styleVariables.Colors.lightGrey },
+              styles.LabelsFont,
+            ]}
+          >
             New User?{" "}
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate("UsernameAndEmail")}>
-            <Text style={[{ color: styleVariables.Colors.white }, styles.LabelsFont]}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("UsernameAndEmail")}
+          >
+            <Text
+              style={[
+                { color: styleVariables.Colors.white },
+                styles.LabelsFont,
+              ]}
+            >
               SIGN UP HERE
             </Text>
           </TouchableOpacity>

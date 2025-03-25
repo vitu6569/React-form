@@ -5,7 +5,7 @@ import { View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 
 import { useNavigation } from "@react-navigation/native";
-import { NavigationProp } from "@react-navigation/core"; 
+import { NavigationProp } from "@react-navigation/core";
 import { RootStackParamList } from "@/routes/navigation";
 import { AccountProps } from "@/context/accountFormContext";
 
@@ -13,11 +13,15 @@ import Button from "@/components/buttons/button/button";
 import { Input } from "@/components/input/input";
 import BackButton from "@/components/buttons/backbutton/backButton";
 
-import { styleVariables } from "@/components/style/style"
+import { styleVariables } from "@/components/style/style";
 
 // Define o componente de função ProfileScreen como padrão de exportação
 export default function UsernameAndEmail() {
-  const { control, handleSubmit, formState: { errors } } = useForm<AccountProps>();
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<AccountProps>();
 
   const emailRef = useRef<TextInput>(null);
   const confirmEmaiRef = useRef<TextInput>(null);
@@ -26,7 +30,7 @@ export default function UsernameAndEmail() {
 
   function handleNextStep(data: AccountProps) {
     console.log(data);
-    navigation.navigate("UserInfo")
+    navigation.navigate("UserInfo");
   }
 
   function handleButtonPress() {
@@ -35,11 +39,12 @@ export default function UsernameAndEmail() {
 
   return (
     // Retorna uma View com estilo flexível, alinhada ao centro
-    <View style={{ flex: 1, gap: 8, backgroundColor: styleVariables.Colors.black  }}>
+    <View
+      style={{ flex: 1, gap: 8, backgroundColor: styleVariables.Colors.black }}
+    >
       <BackButton />
 
-      <View style={{ flex: 1, marginHorizontal: 16, maxWidth: "100%",}}>
-
+      <View style={{ flex: 1, marginHorizontal: 16, maxWidth: "100%" }}>
         <View style={{ marginTop: 29, gap: 16 }}>
           <Input
             inputProps={{
@@ -53,6 +58,8 @@ export default function UsernameAndEmail() {
               control: control,
               rules: { required: "Username is required" },
             }}
+            sizeC="default"
+            inputI="large"
             error={errors.username?.message}
           />
           <Input
@@ -66,8 +73,13 @@ export default function UsernameAndEmail() {
             formProps={{
               name: "email",
               control: control,
-              rules: { required: "Email is required", pattern: /^\S+@\S+\.\S+$/ },
+              rules: {
+                required: "Email is required",
+                pattern: /^\S+@\S+\.\S+$/,
+              },
             }}
+            sizeC="default"
+            inputI="large"
             error={errors.email?.message?.toString()}
           />
           <Input
@@ -91,6 +103,8 @@ export default function UsernameAndEmail() {
                   value === control._formValues.email || "Emails do not match", // Validação personalizada
               },
             }}
+            sizeC="default"
+            inputI="large"
             error={errors.confirmEmail?.message?.toString()} // Exibe a mensagem de erro
           />
           <Button title="CONFIRM" onPress={handleButtonPress} />

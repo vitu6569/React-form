@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { Controller, UseControllerProps } from "react-hook-form";
 import { Input } from "@/components/input/input";
+import { styleVariables } from "../style/style";
 
 interface SelectInputProps {
   formProps: UseControllerProps;
@@ -36,7 +37,10 @@ const SelectInput: React.FC<SelectInputProps> = ({
                   value: field.value,
                   placeholder,
                   editable: false, // Impede digitação direta
+                  Icon: { name: "default-icon" }, // Replace "default-icon" with the actual icon name
                 }}
+                sizeC="default"
+                inputI="default"
               />
             </TouchableOpacity>
 
@@ -89,12 +93,10 @@ const styles = StyleSheet.create({
   },
   option: {
     padding: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: "#ddd",
   },
-  optionText: { fontSize: 16,     color: "#fff", },
+  optionText: { fontSize: 16, color: styleVariables.Colors.grey },
   cancelButton: { padding: 15, alignItems: "center" },
-  cancelText: { color: "red", fontWeight: "bold" },
+  cancelText: { color: styleVariables.Colors.red, fontWeight: "bold" },
 });
 
 export default SelectInput;

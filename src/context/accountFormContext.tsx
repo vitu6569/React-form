@@ -1,4 +1,3 @@
-/* eslint-disable react/react-in-jsx-scope */
 import React, { createContext, ReactNode, useState } from "react";
 
 export type AccountProps = {
