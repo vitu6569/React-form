@@ -125,8 +125,8 @@ export default function UserInfo() {
               <SelectInput
                 formProps={{
                   control,
-                  name: "category", // Nome do campo no formulário
-                  rules: { required: "Category is required" },
+                  name: "gender", // Nome do campo no formulário
+                  rules: { required: "gender is required" },
                 }}
                 options={["Male", "Female", "Other"]}
                 placeholder="Gender"
