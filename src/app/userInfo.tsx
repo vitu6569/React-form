@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
+import {View } from "react-native";
 import { useForm } from "react-hook-form";
-import { View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 
 import { useNavigation } from "@react-navigation/native";
@@ -12,6 +12,7 @@ import Button from "@/components/buttons/button/button";
 import { Input } from "@/components/input/input";
 import SelectInput from "@/components/inputCategory/SelectInput";
 import BackButton from "@/components/buttons/backbutton/backButton";
+import { ProgressBar } from "@/components/progress/progress";
 
 import { styleVariables } from "@/components/style/style";
 
@@ -49,8 +50,7 @@ export default function UserInfo() {
 
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
-  function handleNextStep(data: AccountProps) {
-    console.log(data);
+  function handleNextStep() {
     navigation.navigate("UserAddress");
   }
 
@@ -59,7 +59,15 @@ export default function UserInfo() {
       style={{ flex: 1, gap: 8, backgroundColor: styleVariables.Colors.black }}
     >
       <BackButton />
-
+      <ProgressBar
+        progress={0.5}
+        icons={[
+          { name: "home", color: "#FF8C00" },
+          { name: "person", color: "#FF8C00" },
+          { name: "pin-drop", color: "#FFFFFF" },
+          { name: "lock", color: "#FFFFFF" },
+        ]}
+      />
       <View style={{ flex: 1, marginHorizontal: 16, maxWidth: "100%" }}>
         <View style={{ marginTop: 29, gap: 16 }}>
           <Input

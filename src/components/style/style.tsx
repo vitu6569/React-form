@@ -75,18 +75,17 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   // Input size variations
-  defaultInput: {
-    maxWidth: "auto", // Flexible width for larger inputs
-  },
-  smallInput: {
-    maxWidth: 1000, // Half-width for smaller inputs
-  },
-  // Input size variations
   default: {
     width: "auto", // Flexible width for larger inputs
   },
   largeInput: {
-    width: "100%", // Half-width for smaller inputs
+    width: "98%", // Half-width for smaller inputs
+  },
+  mediumInput: {
+    width: "85%", // Half-width for smaller inputs
+  },
+ smallInput: {
+    width: "50%", // Flexible width for larger inputs
   },
   // Button styles
   buttonO: {

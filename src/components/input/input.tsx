@@ -55,8 +55,8 @@ type Props = {
   formProps: UseControllerProps;
   inputProps: TextInputProps & { Icon?: { name: string } };
   error?: string;
-  sizeC?: "default" | "small";
-  inputI?: "default" | "large";
+  sizeC?: "default" | "large" | "small" | "medium";
+  inputI?: "default" | "large" | "small" | "medium";
 };
 
 // eslint-disable-next-line react/display-name
@@ -64,10 +64,21 @@ const Input = forwardRef<TextInput, Props>(
   ({ sizeC = "default", inputI = "default", formProps, inputProps }, ref) => {
     const [isFocused, setIsFocused] = useState(false);
     const size =
-      sizeC === "default" ? styles.defaultInput : styles.smallInput;
-      const inputSize =
-      inputI === "default" ? styles.defaultInput : styles.largeInput;
-    
+      sizeC === "default"
+        ? styles.default
+        : inputI === "large"
+        ? styles.largeInput
+        : inputI === "small"
+        ? styles.smallInput
+        : styles.mediumInput;
+    const inputSize =
+      inputI === "default"
+        ? styles.default
+        : inputI === "large"
+        ? styles.largeInput
+        : inputI === "small"
+        ? styles.smallInput
+        : styles.mediumInput;
 
     return (
       <Controller
@@ -92,7 +103,10 @@ const Input = forwardRef<TextInput, Props>(
                 onChangeText={field.onChange}
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
-                style={StyleSheet.flatten([{color: styleVariables.Colors.grey, width: "auto"}, inputSize])}
+                style={StyleSheet.flatten([
+                  { color: styleVariables.Colors.grey, width: "auto" },
+                  inputSize,
+                ])}
                 placeholderTextColor={
                   styleVariables.Colors.grey // Default placeholder color
                 }

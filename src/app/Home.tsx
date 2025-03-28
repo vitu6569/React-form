@@ -23,9 +23,7 @@ export default function HomeScreen() {
 
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
-  function handleNextStep(data: AccountProps) {
-    console.log(data);
-  }
+  function handleNextStep() {}
 
   function handleButtonPress() {
     handleSubmit(handleNextStep)();

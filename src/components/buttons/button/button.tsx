@@ -6,7 +6,7 @@ import { styles, styleVariables } from "@/components/style/style";
 type Props = TouchableOpacityProps & {
   title: string;
   variant?: "primary" | "secondary" | "danger"; // Variantes de estilo
-  size? : "big" | "small"
+  size?: "big" | "small";
 };
 
 /**
@@ -20,7 +20,12 @@ type Props = TouchableOpacityProps & {
  *
  * @returns {JSX.Element} A styled button component with customizable size, variant, and title.
  */
-export default function Button({size = "big", variant = "primary", title, ...rest }: Props) {
+export default function Button({
+  size = "big",
+  variant = "primary",
+  title,
+  ...rest
+}: Props) {
   const buttonStyle =
     variant === "primary"
       ? styles.buttonO
@@ -28,7 +33,7 @@ export default function Button({size = "big", variant = "primary", title, ...res
       ? styles.buttonG
       : styles.buttonR;
   const buttonSize = size === "big" ? styles.bigButton : styles.smallButton;
-  
+
   const textColor =
     variant === "primary"
       ? styleVariables.Colors.black

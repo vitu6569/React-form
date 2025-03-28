@@ -5,6 +5,7 @@ import HomeScreen from "@/app/Home"; // Importing the Home screen component
 import UsernameAndEmail from "@/app/user&Email";
 import UserInfo from "@/app/userInfo";
 import UserAddress from "@/app/userAddress";
+import UserPassword from "@/app/userPassword"
 
 const Stack = createStackNavigator(); // Creating a stack navigator with the specified parameter list
 
@@ -37,6 +38,13 @@ export default function MyStack() {
       <Stack.Screen
         name="UserAddress"
         component={UserAddress}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="UserPassword"
+        component={UserPassword}
         options={{
           headerShown: false,
         }}

@@ -5,6 +5,7 @@ export type AccountProps = {
     email?: string,
     confirmEmail?: string,
     password?: string,
+    confirmPassword?: string,
     firstName?: string,
     lastName?: string,
     dateOfBirth?: string,
