@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
+import { StatusBar } from "expo-status-bar";
 
 import { useNavigation } from "@react-navigation/native";
 import { NavigationProp } from "@react-navigation/core";
@@ -46,6 +47,7 @@ export default function UserAddress() {
     <View
       style={{ flex: 1, gap: 8, backgroundColor: styleVariables.Colors.black }}
     >
+      <StatusBar hidden />
       <BackButton />
       <ProgressBar
         progress={0.8}

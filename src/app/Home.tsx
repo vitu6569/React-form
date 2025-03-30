@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { View, TextInput, Text, TouchableOpacity } from "react-native";
+import { StatusBar } from "expo-status-bar";
 
 import { Input } from "@/components/input/input";
 import Button from "@/components/buttons/button/button";
@@ -33,6 +34,7 @@ export default function HomeScreen() {
     <View
       style={{ flex: 1, gap: 8, backgroundColor: styleVariables.Colors.black }}
     >
+    <StatusBar hidden/>
       <View
         style={{
           flex: 1,
@@ -41,7 +43,7 @@ export default function HomeScreen() {
           marginVertical: 32,
         }}
       >
-        <View style={{ marginHorizontal: 3, marginTop: 53, gap: 24 }}>
+        <View style={{ marginHorizontal: 3, marginTop: 24, gap: 24 }}>
           <Text
             style={[styles.LabelsFont, { color: styleVariables.Colors.white }]}
           >
