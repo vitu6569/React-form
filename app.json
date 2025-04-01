@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#121212"
-      }
+      },
+      "package": "com.vitu6569.formreactnative"
     },
     "web": {
       "favicon": "./assets/favicon.png"
