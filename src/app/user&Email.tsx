@@ -13,7 +13,6 @@ import { AccountProps } from "@/context/accountFormContext";
 import Button from "@/components/buttons/button/button";
 import { Input } from "@/components/input/input";
 import BackButton from "@/components/buttons/backbutton/backButton";
-import { ProgressBar } from "@/components/progress/progress";
 
 import { styleVariables } from "@/components/style/style";
 
@@ -45,15 +44,6 @@ export default function UsernameAndEmail() {
     >
       <StatusBar hidden />
       <BackButton />
-      <ProgressBar
-        progress={0.2}
-        icons={[
-          { name: "home", color: "#FF8C00" },
-          { name: "person", color: "#FFFFFF" },
-          { name: "pin-drop", color: "#FFFFFF" },
-          { name: "lock", color: "#FFFFFF" },
-        ]}
-      />
       <View style={{ flex: 1, marginHorizontal: 16, maxWidth: "100%" }}>
         <View style={{ marginTop: 29, gap: 16 }}>
           <Input

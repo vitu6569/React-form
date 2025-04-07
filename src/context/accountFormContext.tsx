@@ -11,7 +11,6 @@ export type AccountProps = {
     dateOfBirth?: string,
     gender?: string,
     language?: string,
-    occupation?: string,
     streetAddress?: string,
     postalCode?: string,
     streetNumber?: string,

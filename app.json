@@ -24,6 +24,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d6d39dc1-ccdf-4160-893a-e63c2d9028e0"
+      }
+    },
+    "owner": "vitu6569"
   }
 }

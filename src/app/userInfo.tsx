@@ -13,7 +13,6 @@ import Button from "@/components/buttons/button/button";
 import { Input } from "@/components/input/input";
 import SelectInput from "@/components/inputCategory/SelectInput";
 import BackButton from "@/components/buttons/backbutton/backButton";
-import { ProgressBar } from "@/components/progress/progress";
 
 import { styleVariables } from "@/components/style/style";
 
@@ -47,7 +46,6 @@ export default function UserInfo() {
 
   const FirstNameRef = useRef<TextInput>(null);
   const LastNameRef = useRef<TextInput>(null);
-  const OccupationRef = useRef<TextInput>(null);
 
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
@@ -61,15 +59,6 @@ export default function UserInfo() {
     >
       <StatusBar hidden />
       <BackButton />
-      <ProgressBar
-        progress={0.5}
-        icons={[
-          { name: "home", color: "#FF8C00" },
-          { name: "person", color: "#FF8C00" },
-          { name: "pin-drop", color: "#FFFFFF" },
-          { name: "lock", color: "#FFFFFF" },
-        ]}
-      />
       <View style={{ flex: 1, marginHorizontal: 16, maxWidth: "100%" }}>
         <View style={{ marginTop: 29, gap: 16 }}>
           <Input
@@ -157,22 +146,6 @@ export default function UserInfo() {
             }}
             options={["English", "Spanish", "Portuguese"]}
             placeholder="Language"
-          />
-          <Input
-            ref={OccupationRef}
-            inputProps={{
-              placeholder: "Occupation",
-              textContentType: "familyName",
-              returnKeyType: "next",
-            }}
-            formProps={{
-              name: "occupation",
-              control,
-              rules: { required: "Occupation is required" },
-            }}
-            sizeC="default"
-            inputI="large"
-            error={errors.occupation?.message}
           />
 
           <Button onPress={handleSubmit(handleNextStep)} title="CONFIRM" />

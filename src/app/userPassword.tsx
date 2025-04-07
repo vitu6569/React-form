@@ -12,7 +12,6 @@ import { AccountProps } from "@/context/accountFormContext";
 import Button from "@/components/buttons/button/button";
 import { Input } from "@/components/input/input";
 import BackButton from "@/components/buttons/backbutton/backButton";
-import { ProgressBar } from "@/components/progress/progress";
 
 import { styleVariables } from "@/components/style/style";
 
@@ -45,15 +44,6 @@ export default function UsernameAndPassword() {
     >
       <StatusBar hidden />
       <BackButton />
-      <ProgressBar
-        progress={1}
-        icons={[
-          { name: "home", color: "#FF8C00" },
-          { name: "person", color: "#FF8C00" },
-          { name: "pin-drop", color: "#FF8C00" },
-          { name: "lock", color: "#FF8C00" },
-        ]}
-      />
       <View style={{ flex: 1, marginHorizontal: 16, maxWidth: "100%" }}>
         <View style={{ marginTop: 29, gap: 16 }}>
           <Input
@@ -73,7 +63,8 @@ export default function UsernameAndPassword() {
                 pattern: {
                   value:
                     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-                  message: "Password must be at least 8 characters",
+                  message:
+                    "Password must be at least 8 characters, include an uppercase letter, a number, and a special character",
                 },
               },
             }}
