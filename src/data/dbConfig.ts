@@ -4,7 +4,7 @@ import mysql from 'mysql2'
 export const dbConfig = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'Jv310133',
+    password: 'password',
     database: 'usuarios',
-    port:3306
+    port: "port"
 });
