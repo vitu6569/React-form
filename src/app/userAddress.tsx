@@ -1,4 +1,3 @@
-// Importa o React
 import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { View } from "react-native";
@@ -13,7 +12,6 @@ import { AccountProps } from "@/context/accountFormContext";
 import Button from "@/components/buttons/button/button";
 import { Input } from "@/components/input/input";
 import BackButton from "@/components/buttons/backbutton/backButton";
-import { ProgressBar } from "@/components/progress/progress";
 
 import { styleVariables } from "@/components/style/style";
 
@@ -22,6 +20,7 @@ export default function UserAddress() {
     control,
     handleSubmit,
     formState: { errors },
+    getValues, // Import getValues
   } = useForm<AccountProps>();
 
   const streetAddressRef = useRef<TextInput>(null);
@@ -36,6 +35,8 @@ export default function UserAddress() {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   function handleNextStep() {
+    const values = getValues(); // Obtém todos os valores do formulário
+    console.log(values);
     navigation.navigate("UserPassword");
   }
 
@@ -49,15 +50,6 @@ export default function UserAddress() {
     >
       <StatusBar hidden />
       <BackButton />
-      <ProgressBar
-        progress={0.8}
-        icons={[
-          { name: "home", color: "#FF8C00" },
-          { name: "person", color: "#FF8C00" },
-          { name: "pin-drop", color: "#FF8C00" },
-          { name: "lock", color: "#FFFFFF" },
-        ]}
-      />
       <View style={{ flex: 1, marginHorizontal: 16, maxWidth: "100%" }}>
         <View style={{ marginTop: 29, gap: 16 }}>
           <Input

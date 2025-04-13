@@ -21,6 +21,7 @@ export default function UserInfo() {
     control,
     handleSubmit,
     setValue,
+    getValues,
     formState: { errors },
   } = useForm<AccountProps>();
 
@@ -50,6 +51,8 @@ export default function UserInfo() {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   function handleNextStep() {
+    const values = getValues(); // Obtém todos os valores do formulário
+    console.log(values);
     navigation.navigate("UserAddress");
   }
 

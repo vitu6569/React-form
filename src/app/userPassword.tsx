@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
+import { useContext } from "react";
+import { AccountFormContext } from "../context/accountFormContext";
 
 import { useNavigation } from "@react-navigation/native";
 import { NavigationProp } from "@react-navigation/core";
@@ -26,11 +28,22 @@ export default function UsernameAndPassword() {
   const confirmPasswordRef = useRef<TextInput>(null);
 
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+  const { updateFormData, submitFormData } = useContext(AccountFormContext);
 
-  function handleNextStep() {
+  async function handleNextStep(data: AccountProps) {
+    // Atualiza o contexto com os dados de senha
+    updateFormData({
+      password: data.password,
+      confirmPassword: data.confirmPassword,
+    });
+
+    // Envia os dados ao backend
+    await submitFormData();
+
+    // Navega para a próxima tela ou reseta a navegação
     navigation.reset({
       index: 0,
-      routes: [{ name: "Home" }], // Replace "Home" with your desired route name
+      routes: [{ name: "Home" }], // Substitua "Home" pela rota desejada
     });
   }
 
