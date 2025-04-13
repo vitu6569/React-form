@@ -49,21 +49,23 @@ Este é um projeto de formulário multi-etapas desenvolvido em **React Native** 
 
 ## 📂 **Estrutura do Projeto**
 
+```plaintext
 React-form/
-├── android/ # Configurações do Android
-├── assets/ # Imagens e fontes
+├── android/                # Configurações do Android
+├── assets/                 # Imagens e fontes
 ├── src/
-│ ├── app/ # Telas do aplicativo
-│ ├── components/ # Componentes reutilizáveis
-│ ├── context/ # Context API para gerenciamento de estado
-│ ├── data/ # Configurações do backend e banco de dados
-│ ├── hooks/ # Hooks customizados
-│ ├── routes/ # Configuração de rotas
-│ └── styles/ # Estilos globais
-├── [App.tsx](http://_vscodecontentref_/0) # Arquivo principal do aplicativo
-├── [package.json](http://_vscodecontentref_/1) # Dependências do projeto
-├── [tsconfig.json](http://_vscodecontentref_/2) # Configurações do TypeScript
-└── README.md # Documentação do projeto
+│   ├── app/                # Telas do aplicativo
+│   ├── components/         # Componentes reutilizáveis
+│   ├── context/            # Context API para gerenciamento de estado
+│   ├── data/               # Configurações do backend e banco de dados
+│   ├── hooks/              # Hooks customizados
+│   ├── routes/             # Configuração de rotas
+│   └── styles/             # Estilos globais
+├── [App.tsx](http://_vscodecontentref_/0)                 # Arquivo principal do aplicativo
+├── [package.json](http://_vscodecontentref_/1)            # Dependências do projeto
+├── [tsconfig.json](http://_vscodecontentref_/2)           # Configurações do TypeScript
+└── README.md               # Documentação do projeto
+```
 
 ## 📝 **Licença**
 
